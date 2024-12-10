@@ -28,13 +28,13 @@ def draw_apple(pomme):
 
 def new_snake(snake, direction, pomme) : 
     if (snake[-1][0]+direction[0],snake[-1][1]+direction[1])==pomme : 
-        snake=snake.append((snake[-1][0]+direction[0],snake[-1][1]+direction[1]))
+        snake.append((snake[-1][0]+direction[0],snake[-1][1]+direction[1]))
         pomme=(rd.randint(0,29),rd.randint(0,29))
     else : 
         snake.append((snake[-1][0]+direction[0],snake[-1][1]+direction[1]))
         snake.popleft()
-    for i in range(len(snake)):
-        snake[i] =(snake[i][0]%30,snake[i][1]%30)
+    for i in range (len(snake)):
+        snake[i] = (snake[i][0]%30,snake[i][1]%30)
     return (snake, pomme)
 
 while running:
